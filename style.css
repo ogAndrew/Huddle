@@ -40,8 +40,19 @@ header img {
 
 .main-container {
   display: flex;
-  justify-content: space-between;
   padding: 0px;
+  max-width: 100%;
+}
+
+.image-container {
+  /* border: 5px solid yellow; */
+  /* overflow: hidden; */
+  /* width: 60%; */
+}
+
+.main-container img {
+  object-fit: contain;
+  max-width: 50%;
 }
 
 .register {
@@ -50,6 +61,7 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 50%;
 }
 
 .register h1 {
@@ -74,6 +86,7 @@ header img {
   border-radius: 32px;
   text-decoration: none;
   font-size: 1.2rem;
+  transition: all 0.5s ease-in-out;
 }
 
 .btn:hover {
@@ -109,16 +122,64 @@ footer ul li a:hover {
 
 footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer .attribution {
   align-self: flex-end;
-  margin: 0 16px;
+  margin: 16px;
   color: #fff;
 }
 
 footer .attribution a {
   color: var(--secondary-color);
   text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid yellow; */
+    padding: 0;
+    margin: 0 0 2rem;
+    text-align: center;
+  }
+
+  .main-container img {
+    /* object-fit: cover; */
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .main-container .register {
+    /* align-items: center; */
+    padding: 1rem 0 0 0;
+    max-width: 100%;
+  }
+
+  .main-container .register h1 {
+    font-size: 1.75rem;
+  }
+
+  .main-container .register p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+
+  .btn {
+    width: 80%;
+    align-self: center;
+    margin-top: 2rem;
+  }
+
+  header img {
+    width: 150px;
+  }
+
+  footer .attribution {
+    align-self: center;
+  }
 }
